@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Series extends Model
 {
     /**
-     * Return Owner of Series
+     * Return Creator of Series
      *
      * @return User
      */
-    public function owner()
+    public function creator()
     {
         return $this->belongsTo(User::class, 'user_id');
     }

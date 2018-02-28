@@ -10,10 +10,10 @@ class SeriesTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function has_an_owner()
+    public function has_a_creator()
     {
         $series = factory('App\Series')->create();
 
-        $this->assertInstanceOf('App\User', $series->owner);
+        $this->assertInstanceOf('App\User', $series->creator);
     }
 }
