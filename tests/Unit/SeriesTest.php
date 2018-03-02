@@ -9,19 +9,28 @@ class SeriesTest extends TestCase
 {
     use DatabaseMigrations;
 
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->series = factory('App\Series')->create();
+    }
+
     /** @test */
     public function a_series_has_a_path()
     {
-        $series = factory('App\Series')->create();
-
-        $this->assertEquals("/series/{$series->slug}", $series->path());
+        $this->assertEquals("/series/{$this->series->slug}", $this->series->path());
     }
 
     /** @test */
     public function a_series_has_a_creator()
     {
-        $series = factory('App\Series')->create();
+        $this->assertInstanceOf('App\User', $this->series->creator);
+    }
 
-        $this->assertInstanceOf('App\User', $series->creator);
+    /** @test */
+    public function a_series_has_episodes()
+    {
+        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $this->series->episodes);
     }
 }
