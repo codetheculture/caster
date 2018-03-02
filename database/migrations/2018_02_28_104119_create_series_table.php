@@ -17,6 +17,7 @@ class CreateSeriesTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
+            $table->string('slug')->unique()->nullable();
             $table->timestamps();
         });
     }

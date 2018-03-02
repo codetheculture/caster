@@ -10,7 +10,15 @@ class SeriesTest extends TestCase
     use DatabaseMigrations;
 
     /** @test */
-    public function has_a_creator()
+    public function a_series_has_a_path()
+    {
+        $series = factory('App\Series')->create();
+
+        $this->assertEquals("/series/{$series->slug}", $series->path());
+    }
+
+    /** @test */
+    public function a_series_has_a_creator()
     {
         $series = factory('App\Series')->create();
 
