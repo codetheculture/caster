@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Episode;
-use Illuminate\Http\Request;
+use App\Series;
 
 class EpisodeController extends Controller
 {
@@ -30,10 +30,9 @@ class EpisodeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -41,12 +40,13 @@ class EpisodeController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  \App\Seroes   $series
      * @param  \App\Episode  $episode
      * @return \Illuminate\Http\Response
      */
-    public function show(Episode $episode)
+    public function show(Series $series, Episode $episode)
     {
-        //
+        return view('episode.show', compact('episode'));
     }
 
     /**
@@ -63,11 +63,10 @@ class EpisodeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Episode  $episode
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Episode $episode)
+    public function update(Episode $episode)
     {
         //
     }

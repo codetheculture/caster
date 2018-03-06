@@ -17,6 +17,7 @@ class CreateEpisodesTable extends Migration
             $table->increments('id');
             $table->integer('series_id');
             $table->string('title');
+            $table->string('slug')->unique()->nullable();
             $table->timestamps();
         });
     }

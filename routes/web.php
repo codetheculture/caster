@@ -21,3 +21,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('series', 'SeriesController@index');
 Route::get('series/{series}', 'SeriesController@show');
+
+Route::get('series/{series}/{episode}', 'EpisodeController@show');
