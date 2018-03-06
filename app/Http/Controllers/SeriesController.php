@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Series;
-use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
@@ -31,10 +30,9 @@ class SeriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
         //
     }
@@ -64,11 +62,10 @@ class SeriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Series  $series
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Series $series)
+    public function update(Series $series)
     {
         //
     }

@@ -6,19 +6,21 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="card">
                     <div class="card-header">{{ $series->title }}</div>
-                </div>
 
-                @foreach ($series->episodes as $episode)
-                    <div class="card">
-                        <div class="card-header">
-                            {{ $episode->created_at->diffForHumans() }}
-                        </div>
+                    <div class="card-body">
+                        @foreach ($series->episodes as $episode)
+                            <article>
+                                <h4>
+                                    <a href="{{ $episode->path() }}">
+                                        {{ $episode->title }}
+                                    </a>
+                                </h4>
+                            </article>
 
-                        <div class="card-body">
-                            {{ $episode->title }}
-                        </div>
+                            <hr>
+                        @endforeach
                     </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </div>
